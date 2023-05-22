@@ -34,75 +34,24 @@ class LinebotController < ApplicationController
             config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
         }
     end
-
-    def validate_deadline(deadline)
-        month = deadline / 100
-        day = (deadline % 100 ) / 1
-
-        return "#{month}月#{day}日"
-    end
-
-    def checkDeadline(day)
-        currentDate = Date.today
-        month = day / 100
-        day = (day % 100) / 1
-
-        deadline = Date.new(currentDate.year, month, day)
-
-        if deadline > currentDate
-            remain = (deadline - currentDate).to_i
-            message = "残り#{remain}日"
-        else
-            message = "締め切りは過ぎています。"
-        end
-        message
-    end
     
     # テキストの返信
     def response_message_event(text)
         if text.include?("登録")
-            subject, deadline = text.delete('登録').delete("\n").split('、')
-            unless subject.present? || deadline.present?
-                message = {
-                    type: 'text',
-                    text: "登録情報を記述して下さい。\n記述例：英語、0101"
-                }
-                return message
-            end
-
-            day = deadline.length == 4 ? validate_deadline(deadline.to_i) : nil
-            if day.nil?
-                message = {
-                    type: 'text',
-                    text: "締め切りは四桁で入力して下さい。\n例：0101" 
-                }
-            else
-                task = Task.create!(title: subject, deadline: deadline.to_i)
-                message = {
-                    type: 'text',
-                    text: "#{subject}の締め切りを、#{day}で登録しました。"
-                }
-            end
+            message = TaskCreateService.task_register(text)
         elsif text.include?("一覧")
-            tasks = Task.all
-
-            if tasks.present?
-                taskList = tasks.map { |task| "・#{task.title}: #{validate_deadline(task.deadline)} (#{checkDeadline(task.deadline)})" }.join("\n")
-                message = "タスク一覧:\n#{taskList}"
-            else
-                message = "タスクがありません"
-            end
-            message = {
-                type: 'text',
-                text: message
-            }
+            message = TasksService.task_list
+        elsif text.include?("削除")
+            message = TaskDeleteService.task_delete(text)
+        elsif text.include?("更新")
+            message = TaskUpdateService.task_update(text)
         else
-            message = {
-                type: 'text',
-                text: "期限の登録であれば「登録」、一覧の取得であれば「一覧」の文字を必ず入力して下さい。\n\n期限の登録であれば「登録」の後に「科目、日付」の形式で入力してください。"
-            }
+            message = "期限の登録であれば「登録」\n一覧の取得であれば「一覧」\nタスクの削除であれば「削除」\nタスクの更新であれば「更新」\nの文字を必ず入力して下さい。\n\nタスクと締め切り日時は「タスク、日付」の形式で入力してください。"
         end
-        
-        message
+
+        {
+            type: 'text',
+            text: message
+        }
     end
 end
