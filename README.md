@@ -34,27 +34,26 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
 
 登録されているタスクの一覧を取得。
 
-![](/images/list1.png)
-
-![](/images/list2.png)
+<img src="/images/list1.png" alt="" width="50%" height="auto">
+<img src="/images/list2.png" alt="" width="50%" height="auto">
 
 - **タスクの登録**
 
-![](/images/create.png)
-
 タスクを登録。形式が異なるものや、期限が過ぎている場合は登録されない。
+
+<img src="/images/create.png" alt="" width="50%" height="auto">
 
 - **タスクの更新**
 
-![](/images/update.png)
-
 タスクの更新。形式が異なるものや、該当するタスクがない、期限が過ぎている場合は更新されない。
+
+<img src="/images/update.png" alt="" width="50%" height="auto">
 
 - **タスクの削除**
 
-![](/images/delete.png)
-
 タスクの削除。形式が異なるものや、該当するタスクがない場合は更新されない。
+
+<img src="/images/delete.png" alt="" width="50%" height="auto">
 
 ## 工夫した点
 
