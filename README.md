@@ -16,7 +16,7 @@
 
 LINE Bot を用いて、大学の課題を締め切り日時と共に登録し、管理ができるシステム
 
-<img src="/images/system.png" alt="" width="35%" height="auto">
+<img src="/images/system.png" alt="" width="50%" height="auto">
 
 ### - LINE Bot を開発した理由 -
 
@@ -34,8 +34,8 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
 
 登録されているタスクの一覧を取得。
 
-<img src="/images/list1.png" alt="" width="50%" height="auto">
-<img src="/images/list2.png" alt="" width="50%" height="auto">
+<img src="/images/list1.png" alt="" width="40%" height="auto">
+<img src="/images/list2.png" alt="" width="40%" height="auto">
 
 - **タスクの登録**
 
