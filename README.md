@@ -39,6 +39,8 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
   <img src="/images/list2.png" alt="" width="43%" height="auto">
 </div>
 
+---
+
 - **タスクの登録**
 
 タスクを登録。形式が異なるものや、期限が過ぎている場合は登録されない。
@@ -48,6 +50,8 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
   <img src="/images/create2.png" alt="" width="43%" height="auto">
 </div>
 
+---
+
 - **タスクの更新**
 
 タスクの更新。形式が異なるものや、該当するタスクがない、期限が過ぎている場合は更新されない。
@@ -56,6 +60,8 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
   <img src="/images/update1.png" alt="" width="43%" height="auto" style="margin-right: 10px;">
   <img src="/images/update2.png" alt="" width="43%" height="auto">
 </div>
+
+---
 
 - **タスクの削除**
 
