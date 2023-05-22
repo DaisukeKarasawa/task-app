@@ -29,6 +29,3 @@
 
 # Ignore .env file
 /.env
-
-# Ignore photo-src
-/photo
