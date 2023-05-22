@@ -35,8 +35,8 @@ Tasks テーブルしか作成しておらず、データベースに登録し�
 登録されているタスクの一覧を取得。
 
 <div style="display: flex;">
-  <img src="/images/list1.png" alt="" width="50%" height="auto">
-  <img src="/images/list2.png" alt="" width="50%" height="auto">
+  <img src="/images/list1.png" alt="" width="40%" height="auto">
+  <img src="/images/list2.png" alt="" width="40%" height="auto">
 </div>
 
 - **タスクの登録**
