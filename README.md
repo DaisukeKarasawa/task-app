@@ -16,7 +16,7 @@
 
 LINE Bot を用いて、大学の課題を締め切り日時と共に登録し、管理ができるシステム
 
-![](/images/system.png)
+<img src="/images/system.png" alt="" width="35%" height="auto">
 
 ### - LINE Bot を開発した理由 -
 
